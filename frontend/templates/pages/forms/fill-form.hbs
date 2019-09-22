@@ -1,0 +1,224 @@
+<div class="content main-wrapper">
+
+    <aside class="aside">
+        <div class="aside-wrapper">
+
+            <h2 class="aside-title">Базовая информация для расчетов</h2>
+
+            <div class="sections-box">
+                <section class="section">
+                    <h3 class="section-title">Курсы валют НБ РБ на
+                        <span class="section-title__date">21.02.2019</span>
+                    </h3>
+                    <label class="section-item">
+                        <p class="section-item__name">EUR</p>
+                        <input class="section-item__value" disabled data-exchanged_currency = "EUR" type="text" maxlength="6" placeholder="0.0000">
+                    </label>
+                    <label class="section-item">
+                        <p class="section-item__name">USD</p>
+                        <input class="section-item__value" disabled data-exchanged_currency = "USD" type="text" maxlength="6" placeholder="0.0000">
+                    </label>
+                    <label class="section-item">
+                        <p class="section-item__name">RUB</p>
+                        <input class="section-item__value" disabled data-exchanged_currency = "RUB" type="text" maxlength="8" placeholder="0.000000">
+                    </label>
+                </section>
+
+                <section class="section">
+                    <h3 class="section-title">Cтавки по депозитам в
+                        <span class="section-title__month">августе</span>, %
+                    </h3>
+                    <label class="section-item">
+                        <p class="section-item__name">BYN</p>
+                        <input class="section-item__value" value="7.45"  data-deposit_currency = "BYN" disabled type="text" maxlength="6" placeholder="00.00">
+                    </label>
+                    <label class="section-item">
+                        <p class="section-item__name">EUR</p>
+                        <input class="section-item__value" data-deposit_currency = "EUR" value="0.30" disabled type="text" maxlength="6" placeholder="00.00">
+                    </label>
+                    <label class="section-item">
+                        <p class="section-item__name">USD</p>
+                        <input class="section-item__value" data-deposit_currency = "USD" disabled value="0.60"  type="text" maxlength="6" placeholder="00.00">
+                    </label>
+                    <label class="section-item">
+                        <p class="section-item__name">RUB</p>
+                        <input class="section-item__value" disabled data-deposit_currency = "RUB" type="text" value="4.125" maxlength="6" placeholder="00.00">
+                    </label>
+                </section>
+
+                <section class="section">
+                    <h3 class="section-title">Размер базовой величины</h3>
+                    <label class="section-item">
+                        <p class="section-item__name">BYN</p>
+                        <input class="section-item__value" data-content = "base-rate" disabled type="text" value="25.5">
+                    </label>
+                </section>
+            </div>
+            <button class="button aside__button button-editAside" data-state="edit-aside">Редактировать</button>
+        </div>
+
+    </aside>
+
+    <div class="main-content">
+        <form class="parameters">
+            <div class="parameters-box">
+                <label class="parameters__item">
+                    <span class = "parameters__item-name">Количество товарных позиций <br> (знач. 1-10)</span>
+                    <input class = "parameters__item-input" type="text" data-content="products-number" value="1" maxlength="2" placeholder="0">
+                </label>
+                <label class="parameters__item">
+                    <span class = "parameters__item-name">Количество поставщиков <br> (знач. 2-4)</span>
+                    <input class = "parameters__item-input" type="text" data-content="suppliers-number" value="2" maxlength="1" placeholder="0">
+                </label>
+                <label class="parameters__item checkbox">
+                    <input class = "parameters__item-checkbox checkbox__icon" type="checkbox" data-content="comparison-type" checked>
+                    <span class = "parameters__item-name checkbox__text">Cравнение по общей сумме</span>
+                </label>
+            </div>
+            <div class="button-wrapper">
+                <button class="button button-clear">Очистить</button>
+                <button class="button button-save">Сохранить</button>
+                <div class="save-window__wrapper">
+                </div>
+            </div>
+        </form>
+
+
+        <div class="table-wrapper">
+            <div class="table">
+
+                <div class="column">
+                    <div class="column-row row-delete"></div>
+                    <div class="column-row row-head">
+                        <div class="column-row__elem">
+                            <p class="column-element__elem-text">№ п/п</p>
+                        </div>
+                        <div class="column-row__elem">
+                            <p class="column-element__elem-text">Товар</p>
+                        </div>
+                        <div class="column-row__elem">
+                            <p class="column-element__elem-text">Ед. изм.</p>
+                        </div>
+                        <div class="column-row__elem">
+                            <p class="column-element__elem-text">Кол-во</p>
+                        </div>
+                    </div>
+
+                    <div class="column-row row-product" data-product="1">
+                        <div class="column-row__elem">
+                            <p class="column-element__elem-text product-number">1</p>
+                        </div>
+                        <div class="column-row__elem">
+                            <textarea placeholder="Введите товар" rows="5" cols="15" maxlength="65" class="form__elem-value error-style product-name"></textarea>
+                        </div>
+                        <div class="column-row__elem">
+                            <input class="form__elem-value error-style  error-style product-measurement" type="text" maxlength="5" placeholder="шт">
+                        </div>
+                        <div class="column-row__elem">
+                            <input class="form__elem-value error-style error-style product-quantity" type="text" maxlength="5" placeholder="1.00">
+                        </div>
+                    </div>
+
+                    <div class="column-row row-payment">
+                        <p class="column-element__elem-text">Условия оплаты</p>
+                    </div>
+                    <div class="column-row row-delivery">
+                        <p class="column-element__elem-text">Стоимость доставки указанного количества</p>
+                    </div>
+                    <div class="column-row row-extras">
+                        <p class="column-element__elem-text">Прочие расходы (например, таможенный сбор, расходы на сертификацию, получение разрешительных документов на ввоз и обращение товаров, услуги таможенных брокеров и пр.)</p>
+                    </div>
+                </div>
+
+                <div class="column product__supplier" data-supplier="1">
+                    <div class="column-row delete-elem row-delete">
+                        <button class="delete-elem__button">x удалить</button>
+                    </div>
+                    <div class="column-row row-head">
+                        <textarea rows="2" cols="18" maxlength="30" placeholder="Поставщик" class="form__elem-value error-style product__supplier-name"></textarea>
+                    </div>
+                    <div class="column-row row-product" data-product="1">
+                        <form class="form" action=" ">
+                            <label class="form__elem">
+                                <span class="form__elem-title ">Цена за ед.</span>
+                                <input class="form__elem-value error-style product-price" type="text" maxlength="12" placeholder="0.00">
+                                <select class="currency">
+                                    <option class="currency-option" value="BYN" selected>BYN</option>
+                                    <option class="currency-option"  value="RUB">RUB</option>
+                                    <option class="currency-option"  value="USD">USD</option>
+                                    <option class="currency-option"  value="EUR">EUR</option>
+                                </select>
+                            </label>
+
+                            <label class="form__elem">
+                                <span class="form__elem-title ">Таможенная пошлина, %</span>
+                                <input class="form__elem-value error-style product-duties" type="text " maxlength="5" placeholder="0.00 ">
+                            </label>
+                            <span class="form__text">или</span>
+                            <label class="form__elem">
+                                <span class="form__elem-title">Код ТН ВЭД</span>
+                                <input class="form__elem-value error-style product-tariff " type="text " maxlength="10" placeholder="10 цифр ">
+                            </label>
+                        </form>
+                    </div>
+
+                    <div class="column-row row-payment">
+                        <form class="payment-form" action=" ">
+                            <select class="payment">
+                                <option class="payment-option" value="default" selected disabled>-- выбрать --</option>
+                                <option class="payment-option" value="postpayment" >Отсрочка платежа</option>
+                                <option class="payment-option"  value="prepayment">100% предоплата</option>
+                                <option class="payment-option"  value="part-payment">Частичная предоплата</option>
+                                <option class="payment-option"  value="l/c">Аккредитив</option>
+                            </select>
+                            <div class="payment-parameters"></div>
+                        </form>
+                    </div>
+
+                    <div class="column-row row-delivery">
+                        <form class="form">
+                            <div class="form__elem">
+                                <input class="form__elem-value error-style product-delivery" type="text" maxlength="12" placeholder="0.00 ">
+                            </div>
+                            <select class="currency">
+                                <option class="currency-option" value="BYN" selected>BYN</option>
+                                <option class="currency-option"  value="RUB">RUB</option>
+                                <option class="currency-option"  value="USD">USD</option>
+                                <option class="currency-option"  value="EUR">EUR</option>
+                            </select>
+                        </form>
+                    </div>
+
+                    <div class="column-row row-extras">
+                        <form class="form">
+                            <div class="form__elem">
+                                <input class="form__elem-value error-style product-extras" type="text" maxlength="10" placeholder="0.00 ">
+                            </div>
+                            <select class="currency">
+                                <option class="currency-option" value="BYN" selected>BYN</option>
+                                <option class="currency-option"  value="RUB">RUB</option>
+                                <option class="currency-option"  value="USD">USD</option>
+                                <option class="currency-option"  value="EUR">EUR</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="column-row row-delete"></div>
+                    <div class="column-row row-head"></div>
+                    <div class="column-row delete-elem row-product" data-product="1">
+                        <button class="delete-elem__button ">x удалить</button>
+                    </div>
+                    <div class="column-row row-payment"></div>
+                    <div class="column-row row-delivery"></div>
+                    <div class="column-row row-extras"></div>
+                </div>
+            </div>
+            <button class="button button-result" disabled data-state="show">Показать результат</button>
+
+            <div class="result"></div>
+        </div>
+    </div>
+
+</div>

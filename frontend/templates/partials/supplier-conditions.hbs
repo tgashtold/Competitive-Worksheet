@@ -1,0 +1,40 @@
+<div class="column-row row-payment">
+    <form class="payment-form" action="">
+        <select class="payment" name="" >
+            <option class="payment-option" value="default" selected disabled>-- выбрать --</option>
+            <option class="payment-option" value="postpayment" >Отсрочка платежа</option>
+            <option class="payment-option"  value="prepayment">100% предоплата</option>
+            <option class="payment-option"  value="part-payment">Частичная предоплата</option>
+            <option class="payment-option"  value="l/c">Аккредитив</option>
+        </select>
+        <div class="payment-parameters"></div>
+    </form>
+</div>
+
+<div class="column-row row-delivery">
+    <form class="form">
+        <div class="form__elem">
+            <input class="form__elem-value product-delivery" type="text" maxlength="12" placeholder="0.00">
+        </div>
+        <select class="currency" name="" >
+            <option class="currency-option" value="BYN" selected>BYN</option>
+            <option class="currency-option"  value="RUB">RUB</option>
+            <option class="currency-option"  value="USD">USD</option>
+            <option class="currency-option"  value="EUR">EUR</option>
+        </select>
+    </form>
+</div>
+
+<div class="column-row row-extras">
+    <form class="form" action="">
+        <div class="form__elem">
+            <input class="form__elem-value product-extras" type="text" maxlength="10" placeholder="0.00">
+        </div>
+        <select class="currency" name="" >
+            <option class="currency-option" value="BYN" selected>BYN</option>
+            <option class="currency-option"  value="RUB">RUB</option>
+            <option class="currency-option"  value="USD">USD</option>
+            <option class="currency-option"  value="EUR">EUR</option>
+        </select>
+    </form>
+</div>

@@ -1,0 +1,26 @@
+<div class="column-row row-product" data-product ="{{ind}}" >
+    <form class="form" action="">
+        <label class="form__elem">
+            <span class="form__elem-title">Цена за ед.</span>
+            <input class="form__elem-value product-price" type="text" maxlength="12" placeholder="0.00">
+
+            <select class="currency">
+                <option class="currency-option" value="BYN" selected>BYN</option>
+                <option class="currency-option"  value="RUB">RUB</option>
+                <option class="currency-option"  value="USD">USD</option>
+                <option class="currency-option"  value="EUR">EUR</option>
+            </select>
+        </label>
+
+        <label class="form__elem">
+            <span class="form__elem-title">Таможенная пошлина, %</span>
+            <input class="form__elem-value product-duties" type="text" maxlength="5" placeholder="0.00">
+        </label>
+
+        <span class="form__text">или</span>
+
+        <label class="form__elem">
+            <span class="form__elem-title">Код ТН ВЭД</span><input class="form__elem-value product-tariff" type="text" maxlength="10" placeholder="10 цифр">
+        </label>
+    </form>
+</div>

@@ -1,0 +1,51 @@
+{{#ifCond target.value '==' 'part-payment'}}
+<label class="form__elem">
+    <span class="form__elem-title">предоплата, %</span>
+    <input class="form__elem-value prepayment-rate " type="text " maxlength="2" placeholder="0">
+</label>
+{{/ifCond}}
+
+{{#ifCond target.value '==' 'prepayment'}}
+<label class="form__elem payment-days">
+    <span class="form__elem-title ">за</span>
+    <input class="form__elem-value prepayment-value" type="text" maxlength="3" placeholder="0">
+    <span class="form__elem-title "> дней</span>
+</label>
+{{/ifCond}}
+
+{{#ifCond target.value '==' 'part-payment'}}
+    <label class="form__elem payment-days">
+        <span class="form__elem-title">за</span>
+        <input class="form__elem-value prepayment-value" type="text " maxlength="3" placeholder="0">
+        <span class="form__elem-title"> дней</span>
+    </label>
+{{/ifCond}}
+
+{{#ifCond target.value '==' 'part-payment' }}
+<label class="form__elem">
+    <span class="form__elem-title">отсрочка, %</span>
+    <input class="form__elem-value postpayment-rate" type="text" maxlength="2" placeholder="0">
+</label>
+{{/ifCond}}
+
+{{#ifCond target.value '==' 'postpayment'}}
+<label class="form__elem payment-days">
+    <input class="form__elem-value postpayment-value " type="text" maxlength="3" placeholder="0">
+    <span class="form__elem-title"> дней</span>
+</label>
+{{/ifCond}}
+
+{{#ifCond target.value '==' 'part-payment'}}
+    <label class="form__elem payment-days">
+        <input class="form__elem-value postpayment-value" type="text" maxlength="3" placeholder="0">
+        <span class="form__elem-title "> дней</span>
+    </label>
+{{/ifCond}}
+
+{{#ifCond target.value '==' 'l/c'}}
+<label class="form__elem">
+    <span class="form__elem-title">срок поставки</span>
+    <input class="form__elem-value prepayment-value" type="text" maxlength="3" placeholder="0">
+    <span class="form__elem-title"> дней</span>
+</label>
+{{/ifCond}}

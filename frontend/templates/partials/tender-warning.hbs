@@ -1,0 +1,12 @@
+{{#ifCond procedureType '==' 'bidding'}}
+    <div class="result-text__wrapper ">
+        <p class="result-tender "><span class="result-attention ">!!!</span>Сумма закупки у одного поставщика превышает 10 000 базовых величин. В соответствии с законодательством Республики Беларусь требуется проведение открытого/закрытого конкурса.</p>
+    </div>
+{{/ifCond}}
+
+{{#ifCond procedureType '==' 'priceRequest'}}
+    <div class="result-text__wrapper ">
+        <p class="result-tender "><span class="result-attention ">!!!</span>Сумма закупки у одного поставщика превышает 1000 базовых величин. В соответствии с законодательством Республики Беларусь требуется проведение процедуры запроса ценовых предложений.</p>
+    </div>
+{{/ifCond}}
+

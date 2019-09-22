@@ -1,0 +1,66 @@
+.header {
+    border-bottom: 1px solid $blueForLines;
+    box-shadow: 0 0 4px $blueForLines;
+    background-color: $backColor;
+    width: 100%;
+    &-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding: 15px 0;
+    }
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
+    &-item {
+        &+& {
+            margin-left: 150px;
+        }
+        &__link {
+            @include mont (700, 15px, normal, 'Montserrat-boldItalic');
+            color: $grey;
+            cursor: pointer;
+            transition: .3s;
+            &:hover {
+                color: black;
+                transition: .3s;
+            }
+        }
+    }
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: 10%;
+    &-main {
+        @include mont (700, 23px, normal, 'Montserrat-bold');
+        color: $logoBlue;
+        text-transform: uppercase;
+    }
+    &-description {
+        @include mont (400, 16px);
+        color: $logoBlue;
+    }
+}
+
+.active {
+    color: black;
+}
+
+@include media-max(800px) {
+    .header {
+        &-wrapper {
+            flex-direction: column;
+        }
+    }
+    .menu {
+        order: 2;
+        align-self: center;
+        margin-top: 10px;
+    }
+}

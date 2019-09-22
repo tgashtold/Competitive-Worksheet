@@ -1,0 +1,98 @@
+.main {
+  width: 100%;
+}
+
+.saved {
+  border: 3px solid $blueForLines;
+  padding: 20px 50px;
+  border-radius: 2px;
+  margin: 30px;
+  width: 80%;
+
+  &-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-head {
+    @include mont (700, 17px, normal, 'Montserrat-bold');
+    margin-bottom: 20px;
+  }
+
+  &-item {
+    border: 2px solid $blueForLines;
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    transition: .3s;
+    margin-top: 15px;
+
+    &:hover {
+      box-shadow: 0 0 4px $blueForLines;
+      background-color: $backColor;
+      transition: .3s;
+    }
+
+    &__name {
+      @include mont (400, 12px);
+      text-transform: uppercase;
+      margin-right: 15px;
+    }
+
+    &__container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__date {
+      @include mont (700, 11px, normal, 'Montserrat-bold');
+    }
+
+    &__button {
+      margin-left: 20px;
+    }
+  }
+}
+
+.saved-title {
+  text-align: center;
+  @include mont (400, 18px);
+  padding: 5px 10px;
+
+  color: $logoBlue;
+  width: 100%;
+  border: 0;
+  border-radius: 7px;
+
+  &:disabled {
+    background-color: white;
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 65px;
+    margin-bottom: 10px;
+  }
+
+}
+
+.saved-message {
+  font-size: 11px;
+  margin: 0;
+  padding: 0;
+}
+
+@include media-max(700px) {
+  .saved {
+    width: 100%;
+    padding: 20px 20px;
+  }
+}

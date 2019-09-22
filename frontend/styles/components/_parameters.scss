@@ -1,0 +1,169 @@
+.main-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.parameters {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    justify-content: space-between;
+    &-box {
+        display: flex;
+        flex-direction: column;
+        width: 290px;
+    }
+    &__item {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        &+& {
+            margin-top: 10px;
+        }
+        &-name {
+            @include mont (400, 13px);
+        }
+        &-input {
+            width: 50px;
+            padding: 3px 5px;
+            text-align: center;
+            border: $border;
+            border-radius: 3px;
+            @include mont (400, 14px);
+            background-color: $backColor;
+            transition: .3s;
+            &:hover,
+            &:focus {
+                transition: .3s;
+                box-shadow: 0 0 3px $blueForLines;
+            }
+        }
+    }
+}
+
+.button {
+    &-clear {
+        margin-right: 40px;
+    }
+}
+
+.checkbox {
+    position: relative;
+    &__icon {
+        visibility: hidden;
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        top: 0;
+        left: 255px;
+    }
+    &__text {
+        margin-right: 20px;
+        position: absolute;
+        top: 2px;
+        left: 0;
+    }
+    &__text:before {
+        content: "";
+        cursor: pointer;
+        position: absolute;
+        width: 17px;
+        height: 16px;
+        border-radius: 3px;
+        top: 1px;
+        left: 256px;
+        background-color: $backColor;
+        border: $border;
+        transition: .3s;
+    }
+    &__text:after {
+        visibility: hidden;
+        content: '';
+        position: absolute;
+        width: 11px;
+        height: 4px;
+        background: transparent;
+        top: 5px;
+        left: 259px;
+        border: 2px solid $blueForLines;
+        border-top: none;
+        border-right: none;
+        transform: rotate(-50deg);
+    }
+    &__text:hover::before {
+        transition: .3s;
+        box-shadow: 0 0 3px $blueForLines;
+    }
+    &__icon:checked+&__text:after {
+        visibility: visible;
+    }
+}
+
+.button-wrapper {
+    position: relative;
+}
+
+.save-window {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: white;
+    border: $border;
+    transition: .3s;
+    box-shadow: 0 0 4px $blueForLines;
+    padding: 10px;
+    border-radius: 5px;
+    &__wrapper {
+        position: absolute;
+        top: 30px;
+        right: 0;
+    }
+    &__area {
+        padding: 6px;
+
+        border-radius: 3px;
+        border: 0;
+        @include mont (400, 12px);
+        transition: .3s;
+        &::placeholder {
+            @include mont (400, 10px);
+        }
+        &:hover,
+        &:focus {
+            box-shadow: $redShadow;
+            transition: .3s;
+        }
+    }
+    &__button {
+        background-color: transparent;
+        border: 0;
+        text-transform: uppercase;
+        color: $grey;
+        margin-top: 8px;
+        @include mont (700, 10px);
+        transition: .3s;
+        cursor: pointer;
+        &:hover {
+            color: black;
+            transition: .3s;
+        }
+    }
+}
+
+.window-error {
+    margin: 5px 0;
+    align-self: center;
+}
+
+@include media-max(700px) {
+    .parameters {
+        flex-direction: column;
+        align-items: center;
+        &-box {
+            margin-bottom: 35px;
+        }
+    }
+}

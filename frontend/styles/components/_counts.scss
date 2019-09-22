@@ -1,0 +1,38 @@
+.counts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0;
+    &-head {
+        @include mont (700, 20px, normal, 'Montserrat-bold');
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
+    &-currency {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 20px;
+        &__title {
+            padding-right: 20px;
+        }
+    }
+    &-table {
+        border-collapse: collapse;
+        @include mont (400, 13px);
+        color: $logoBlue;
+    }
+    &-cell {
+        padding: 10px 20px;
+        border-bottom: 2px solid $blueForLines;
+        &:not(:first-child) {
+            text-align: center;
+        }
+    }
+    &-row {
+        &__title,
+        &__total {
+            @include mont (700, 12px, normal, 'Montserrat-bold');
+        }
+    }
+}

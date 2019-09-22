@@ -1,0 +1,283 @@
+.table {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+
+  &-wrapper {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 100%
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &:first-child {
+    flex-shrink: 0;
+    max-width: 280px;
+    @include mont (700, 12px);
+
+    .column-row {
+      justify-content: flex-start;
+    }
+  }
+
+  &:last-child {
+    flex-shrink: 0;
+    max-width: 60px;
+    max-width: max-content;
+
+    .column-row {
+      border-bottom: 0;
+    }
+  }
+
+  &-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    &:not(:first-child) {
+      border-bottom: 2px solid $blueForLines;
+      padding: 15px 10px 15px 0;
+    }
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    &__elem {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      width: 100%;
+      @include mont (400, 11px);
+      align-items: center;
+
+      & + & {
+        margin-left: 7px;
+      }
+
+      &:first-child {
+        width: 20px;
+        display: flex;
+        flex-shrink: 0;
+      }
+
+      &:nth-child(2) {
+        width: 115px;
+      }
+
+      &:nth-child(3) {
+        width: 51px;
+      }
+
+      &:last-child {
+        width: 51px;
+      }
+    }
+  }
+}
+
+.row {
+  &-delete {
+    height: 10px;
+  }
+
+  &-head {
+    height: 60px;
+  }
+
+  &-product {
+    height: 300px;
+
+    .column-row__elem:first-child {
+      @include mont (700, 14px);
+    }
+  }
+
+  &-payment {
+    height: 235px;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &-delivery {
+    height: 100px;
+  }
+
+  &-extras {
+    min-height: 150px;
+  }
+}
+
+.delete-elem {
+  &__button {
+    background-color: transparent;
+    border: 0;
+    color: $grey;
+    @include mont (700, 9px);
+    cursor: pointer;
+    transition: .3s;
+
+    &:hover {
+      color: black;
+      transition: .3s;
+    }
+  }
+}
+
+.product {
+  &-measurement {
+    width: 50px;
+  }
+
+  &-quantity {
+    width: 50px;
+  }
+
+  &-price {
+    width: 100px;
+  }
+
+  &-tariff,
+  &-duties,
+  &-extras,
+  &-delivery {
+    width: 100px;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__elem {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0;
+
+    &-title {
+      @include mont (400, 10px);
+      margin-bottom: 5px;
+    }
+
+    &-value {
+      border: 1px solid transparent;
+      border-bottom: $border;
+      border-radius: 4px;
+      padding: 6px 4px;
+      @include mont (700, 11px, normal, 'Montserrat-bold');
+      text-align: center;
+
+      &::placeholder {
+        @include mont (400, 11px);
+      }
+    }
+  }
+}
+
+.currency,
+.payment {
+  border: $border;
+  background-color: $backColor;
+  border-radius: 2px;
+  padding: 4px;
+  margin-top: 3px;
+  @include mont (400, 10px);
+  max-width: 130px;
+}
+
+.payment {
+  &-parameters {
+    margin-top: 5px;
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.payment-days {
+  display: flex;
+  flex-direction: row;
+}
+
+.postpayment-value,
+.prepayment-value {
+  width: 50px;
+  margin: 0 5px;
+  margin-bottom: 5px;
+}
+
+.prepayment-rate,
+.postpayment-rate {
+  width: 100px;
+  margin-bottom: 5px;
+}
+
+.button-result {
+  width: 40%;
+  align-self: center;
+  margin: 20px 0;
+}
+
+::-webkit-scrollbar-button {
+
+  background-repeat: no-repeat;
+  width: 5px;
+  height: 0px
+}
+
+::-webkit-scrollbar-track {
+  background-color: $backColor;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  background-color: $blueForLines;
+
+  transition: .3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+  transition: .3s;
+  background-color: $blueForLines;
+}
+
+::-webkit-resizer {
+
+  background-repeat: no-repeat;
+  width: 4px;
+  height: 0px
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+.best {
+  background-color: rgb(252, 252, 235);
+
+}
+
+@include media-max(1024px) {
+  .table {
+    overflow-x: scroll;
+  }
+}

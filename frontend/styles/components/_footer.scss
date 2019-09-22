@@ -1,0 +1,20 @@
+.footer {
+    border-top: 1px solid $blueForLines;
+    margin-top: 40px;
+    padding: 15px 0 20px;
+    box-shadow: 0 0 4px $blueForLines;
+    display: flex;
+    justify-content: center;
+    background-color: $backColor;
+    width: 100%;
+    &-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &-text {
+        @include mont (400, 13px);
+        color: $logoBlue;
+        text-align: center;
+    }
+}

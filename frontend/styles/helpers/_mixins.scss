@@ -1,0 +1,19 @@
+@mixin mont ($weight, $size, $line: normal, $type: 'Montserrat-regular') {
+    font-weight: $weight;
+    font-family: $type, sans-serif;
+    font-size: $size;
+    line-height: $line;
+    font-style: normal;
+}
+
+@mixin media-max($width) {
+    @media only screen and (max-width: $width) {
+        @content;
+    }
+}
+
+@mixin media-min($width) {
+    @media only screen and (min-width: $width) {
+        @content;
+    }
+}
